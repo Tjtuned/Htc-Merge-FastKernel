@@ -92,8 +92,9 @@ struct mmc_vdd_xlat {
 };
 
 static struct mmc_vdd_xlat mmc_vdd_table[] = {
-	{ MMC_VDD_28_29,	2850 },
-	{ MMC_VDD_29_30,	2900 },
+        { MMC_VDD_20_21,        2250 },
+	{ MMC_VDD_28_29,	2650 },
+	{ MMC_VDD_29_30,	2700 },
 };
 
 static unsigned int sdslot_vdd = 0xffffffff;
@@ -228,7 +229,7 @@ static unsigned int lexikon_wifi_status(struct device *dev)
 }
 
 static struct mmc_platform_data lexikon_wifi_data = {
-	.ocr_mask		= MMC_VDD_28_29,
+	.ocr_mask		= MMC_VDD_20_21,
 	.status			= lexikon_wifi_status,
 	.register_status_notify	= lexikon_wifi_status_register,
 	.embedded_sdio		= &lexikon_wifi_emb_data,
